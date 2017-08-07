@@ -1,5 +1,6 @@
 import Maze
 from turtle import Turtle, Screen
+from guizero import App
 
 def initialiseMaze():
     
@@ -15,6 +16,8 @@ def initialiseMaze():
     turtle.goto(mazeXStart, mazeYStart);
     turtle.left(90);
     turtle.showturtle();
+    
+    
 
 initialiseMaze();
 

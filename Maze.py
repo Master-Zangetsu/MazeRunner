@@ -1,9 +1,13 @@
 from turtle import Turtle, Screen
+import Controls
 
 class Maze():
     
     xWalls = {};
     yWalls = {};
+    
+    turtle;
+    screen;
 
     def generateMazeBoundries(mazeWidth):
     
@@ -23,8 +27,10 @@ class Maze():
         for i in range(4):
             turtle.forward(mazeWidth);
             turtle.right(90);
+            
+        Maze.generateMazePath(turtle, mazeWidth);
     
-        return Maze.generateMazePath(turtle, mazeWidth);
+        return screen;
         
     def generateMazePath(turtle, mazeWidth):
         
@@ -82,6 +88,7 @@ class Maze():
     def collectTurtle(mazeWidth):
         
         turtle = Maze.generateMazeBoundries(mazeWidth);
+        Controls.createControls(turtle, screen);
         mazeWalls = {'xWalls' : Maze.xWalls, 'yWalls' : Maze.yWalls};
         
         return mazeWalls;
